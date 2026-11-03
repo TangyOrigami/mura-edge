@@ -1,0 +1,15 @@
+name = "mura-tiles"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+
+# Serve on the media hostname, under /t/. The API's PAGE_TILE_BASE points here.
+# No R2 binding: tiles are rendered by the API (API_ORIGIN) on a cache miss and
+# never stored.
+routes = [{ pattern = "media.men-mor.com/t/*", zone_name = "men-mor.com" }]
+
+[vars]
+API_ORIGIN = "https://mura.cx"
+ALLOWED_ORIGINS = "https://mura.cx"
+
+# Secret, never in this file:
+#   go run ./cmd/api -print-edge-key | wrangler secret put EDGE_KEY
