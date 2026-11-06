@@ -1,0 +1,12 @@
+name = "spoiler-detector"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+
+# Already attached in the dashboard; declared here so a deploy keeps it.
+routes = [{ pattern = "spoiler.men-mor.com", custom_domain = true }]
+
+[ai]
+binding = "AI"
+
+# Secret, never in this file — the same value as the backend's SPOILER_API_KEY:
+#   make spoiler_deploy   (from mura-backend)
