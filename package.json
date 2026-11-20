@@ -10,6 +10,6 @@
     "eval:spoiler": "node spoiler/eval/run.js"
   },
   "devDependencies": {
-    "wrangler": "^4.158.0"
+    "wrangler": "^4.164.0"
   }
 }
