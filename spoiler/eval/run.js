@@ -14,7 +14,6 @@ import { readFileSync } from 'node:fs';
 import { PROMPTS, parseScore } from '../src/index.js';
 
 export const CANDIDATES = [
-  '@cf/meta/llama-3.2-1b-instruct',
   '@cf/meta/llama-3.2-3b-instruct',
   '@cf/meta/llama-3.1-8b-instruct-fast',
   '@cf/meta/llama-3.3-70b-instruct-fp8-fast',

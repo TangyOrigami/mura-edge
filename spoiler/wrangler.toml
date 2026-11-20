@@ -12,8 +12,10 @@ binding = "AI"
 #   make spoiler_deploy   (from mura-backend)
 
 # Model and prompt (spoiler/src/index.js PROMPTS). Change only after comparing
-# them with `npm run eval:spoiler` (spoiler/eval/run.js) — v1 + the 1B model
-# scored "the hero dies at the end" a 0 in beta testing (Nov 19).
+# them with `npm run eval:spoiler` (spoiler/eval/run.js). Eval 2026-11-20, 32
+# labelled comments: Mistral Small 3.1 24B + v2 caught 11/11 spoilers at the
+# backend's 75% threshold with 0/13 false flags (MAE 0.25). Llama 3.2 1B, the
+# original model, was retired by Cloudflare (HTTP 410).
 [vars]
-SPOILER_MODEL = "@cf/meta/llama-3.2-1b-instruct"
+SPOILER_MODEL = "@cf/mistralai/mistral-small-3.1-24b-instruct"
 SPOILER_PROMPT = "v2"

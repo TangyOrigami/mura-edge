@@ -2,7 +2,7 @@
 //
 // POST / with X-API-Key and {"text": "..."} → {"score": 0–9, "isSpoiler": bool}
 //
-// A Workers AI model (SPOILER_MODEL, default Llama 3.2 1B) rates how much a
+// A Workers AI model (SPOILER_MODEL, default Mistral Small 3.1 24B) rates how much a
 // comment gives away, on the scale in PROMPTS. The backend (internal/server/spoiler.go) calls it after a
 // comment is posted, off the request path, and flags the comment when the
 // score clears the `spoiler_threshold` platform flag. It replaces mura-llm,
@@ -56,7 +56,8 @@ export const PROMPTS = {
   ].join('\n')
 };
 
-export const DEFAULT_MODEL = '@cf/meta/llama-3.2-1b-instruct';
+// Llama 3.2 1B (the original) was retired by Workers AI in Nov 2026.
+export const DEFAULT_MODEL = '@cf/mistralai/mistral-small-3.1-24b-instruct';
 
 // comments.body is VARCHAR(2000); anything longer did not come from us.
 const MAX_TEXT = 2000;
