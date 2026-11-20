@@ -10,3 +10,10 @@ binding = "AI"
 
 # Secret, never in this file — the same value as the backend's SPOILER_API_KEY:
 #   make spoiler_deploy   (from mura-backend)
+
+# Model and prompt (spoiler/src/index.js PROMPTS). Change only after comparing
+# them with `npm run eval:spoiler` (spoiler/eval/run.js) — v1 + the 1B model
+# scored "the hero dies at the end" a 0 in beta testing (Nov 19).
+[vars]
+SPOILER_MODEL = "@cf/meta/llama-3.2-1b-instruct"
+SPOILER_PROMPT = "v2"

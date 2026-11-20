@@ -6,7 +6,8 @@
     "test": "node --test test/*.test.js spoiler/test/*.test.js",
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",
-    "deploy:spoiler": "wrangler deploy -c spoiler/wrangler.toml"
+    "deploy:spoiler": "wrangler deploy -c spoiler/wrangler.toml",
+    "eval:spoiler": "node spoiler/eval/run.js"
   },
   "devDependencies": {
     "wrangler": "^4.158.0"
