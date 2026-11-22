@@ -39,4 +39,5 @@ jobs:
           node-version: 24
       - run: npm ci
       - run: npx wrangler deploy
+      - run: npx wrangler deploy --env staging
       - run: npx wrangler deploy -c spoiler/wrangler.toml

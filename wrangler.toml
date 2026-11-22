@@ -13,3 +13,18 @@ ALLOWED_ORIGINS = "https://mura.cx"
 
 # Secret, never in this file:
 #   go run ./cmd/api -print-edge-key | wrangler secret put EDGE_KEY
+
+# Staging copy of the tile Worker. Production's sends every cache miss to
+# mura.cx and only allows that origin, so staging's protected pages could never
+# load (the production API has no staging episodes: 404). This one renders from
+# the staging API on workers.dev; staging's PAGE_TILE_BASE points at it. Same
+# EDGE_KEY as production (staging shares PAGE_PROTECTION_SECRET), set once with
+#   make edge_key | npx wrangler secret put EDGE_KEY --env staging
+[env.staging]
+name = "mura-tiles-staging"
+routes = []
+workers_dev = true
+
+[env.staging.vars]
+API_ORIGIN = "https://mura-api-staging.up.railway.app"
+ALLOWED_ORIGINS = "https://mura-web-staging.csaenz613.workers.dev"
